@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the BPM</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section style="padding:40px;">
+        <span class="h1">Youtronome</span>
+        <button onclick="newRound()">New round</button>
+    </section>
+    <section style="padding:40px;">
+        <div style="display:flex;flex-flow:row;padding:30px;border:4px gray solid;border-radius:20px 20px 0px 0px;background-color:rgb(232, 232, 232);align-items: center;gap:20px;justify-content: center;">
+            <span class="indicator"></span>
+            <span class="h1">???</span>
+            <span class="indicator"></span>
+        </div>
+        <div style="display:flex;">
+            <input id="bpminput" style="display:flex;flex-flow:row;padding:10px;font-size:30px;border:4px gray solid;border-top:0px;border-right:0px;border-bottom-left-radius: 20px;background-color:rgb(245, 245, 245);align-items: center;gap:20px;justify-content: center;width:100%;">
+            <div style="display:flex;flex-flow:row;padding:10px;font-size:30px;border-bottom:4px gray solid;border-right:4px gray solid;background-color:rgb(245, 245, 245);align-items: end;gap:20px;justify-content: center;"><span class="h2">bpm</span></div> 
+            <div style="display:flex;flex-flow:row;padding:10px;font-size:30px;border:4px gray solid;border-top:0px;border-left:0px;border-bottom-right-radius: 20px;background-color:rgb(245, 245, 245);align-items: center;gap:20px;justify-content: center;">
+                <button onclick="sendGuess()">Submit guess</button>
+            </div>  
+        </div>
+        <div id="previousguesses" style="margin-top:20px;"></div>
+
+    </section>
+    <script src="./script.js"></script>
+    <script>window.localStorage.removeItem('gameMode');document.addEventListener('keydown', e=>{if(e.key == "Enter"){sendGuess()}})</script>
+</body>
+</html>
